@@ -7,7 +7,7 @@
 
 > **Instant, zero-setup OpenAPI 3.0/3.1 mock server CLI with semantic data synthesis, stateful in-memory CRUD persistence, and chaos engineering.**
 
-![MockForge Demo](./demo.gif)
+![MockForge Demo](https://raw.githubusercontent.com/aadityaniure2/mockforge/main/demo.gif)
 
 ---
 
