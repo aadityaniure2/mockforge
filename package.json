@@ -4,7 +4,7 @@
   "description": "Instant, zero-setup OpenAPI 3.0/3.1 mock server CLI",
   "type": "module",
   "bin": {
-    "mockforge": "./dist/bin/index.js"
+    "mockforge": "dist/bin/index.js"
   },
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
