@@ -1,9 +1,11 @@
 {
   "name": "@aadi20/mockforge",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Instant, zero-setup OpenAPI 3.0/3.1 mock server CLI",
   "type": "module",
-  "bin": "./dist/bin/index.js",
+  "bin": {
+    "mockforge": "dist/bin/index.js"
+  },
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "files": [
