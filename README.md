@@ -1,11 +1,13 @@
 # 🔥 MockForge
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/mockforge/mockforge)
-[![npm version](https://img.shields.io/badge/npm-v1.0.0-blue.svg)](https://www.npmjs.com/package/mockforge)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/aadityaniure2/mockforge)
+[![npm version](https://img.shields.io/badge/npm-v1.0.0-blue.svg)](https://www.npmjs.com/package/@aadityaniure2/mockforge)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > **Instant, zero-setup OpenAPI 3.0/3.1 mock server CLI with semantic data synthesis, stateful in-memory CRUD persistence, and chaos engineering.**
+
+![MockForge Demo](./demo.gif)
 
 ---
 
@@ -14,7 +16,7 @@
 Spin up an instant, standards-compliant mock server straight from your OpenAPI specification—no installation or configuration needed:
 
 ```bash
-npx mockforge ./openapi.yaml
+npx @aadityaniure2/mockforge ./openapi.yaml
 ```
 
 MockForge parses local files (`.yaml`, `.yml`, `.json`) and remote URLs (`https://api.example.com/openapi.json`), resolves circular `$ref` schemas, binds parameter routes, and starts serving realistic mock endpoints in milliseconds.

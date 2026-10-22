@@ -1,5 +1,5 @@
 {
-  "name": "mockforge",
+  "name": "@aadityaniure2/mockforge",
   "version": "1.0.0",
   "description": "Instant, zero-setup OpenAPI 3.0/3.1 mock server CLI",
   "type": "module",
