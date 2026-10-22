@@ -65,6 +65,15 @@ describe('HTTP Mock Server & Chaos Pipeline (server-and-chaos)', () => {
     },
   };
 
+  it('serves default HTML welcome page at / when not defined in spec', async () => {
+    const app = createMockApp(sampleSpec, { stateless: true });
+    const res = await app.request('/');
+    expect(res.status).toBe(200);
+    const html = await res.text();
+    expect(html).toContain('MockForge API');
+    expect(html).toContain('/users');
+  });
+
   it('serves mocked response for mapped route', async () => {
     const app = createMockApp(sampleSpec, { stateless: true });
     const res = await app.request('/users');

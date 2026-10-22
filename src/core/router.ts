@@ -111,5 +111,48 @@ export function createMockApp(spec: OpenAPISpec, options: ServerOptions = {}): H
     }
   }
 
+  // 4. Default welcome page if '/' is not defined in spec
+  if (!spec.paths?.['/'] && !spec.paths?.['']) {
+    app.get('/', (c) => {
+      const endpoints = Object.keys(spec.paths || {})
+        .map((p) => {
+          const honoPath = openApiPathToHonoPath(p);
+          const methods = Object.keys(spec.paths[p] || {})
+            .map((m) => m.toUpperCase())
+            .join(', ');
+          return `<li><a href="${honoPath}">${honoPath}</a> <span style="color:#666">(${methods})</span></li>`;
+        })
+        .join('');
+
+      return c.html(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8" />
+          <title>${spec.info?.title || 'MockForge Server'}</title>
+          <style>
+            body { font-family: system-ui, -apple-system, sans-serif; padding: 2rem; max-width: 700px; margin: 0 auto; color: #222; background: #fafafa; }
+            h1 { color: #f97316; margin-bottom: 0.25rem; }
+            ul { line-height: 2; margin-top: 1rem; }
+            a { color: #2563eb; text-decoration: none; font-weight: 500; font-family: monospace; font-size: 1.05rem; }
+            a:hover { text-decoration: underline; }
+            .badge { background: #e2e8f0; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: normal; color: #333; }
+            .box { background: #fff; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+          </style>
+        </head>
+        <body>
+          <div class="box">
+            <h1>🔥 ${spec.info?.title || 'MockForge API'} <span class="badge">v${spec.info?.version || '1.0.0'}</span></h1>
+            <p style="color: #64748b;">${spec.info?.description || 'Instant mock server running locally.'}</p>
+            <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid #e2e8f0;" />
+            <h3>Available Endpoints:</h3>
+            <ul>${endpoints}</ul>
+          </div>
+        </body>
+        </html>
+      `);
+    });
+  }
+
   return app;
 }

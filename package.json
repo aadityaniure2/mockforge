@@ -1,6 +1,6 @@
 {
   "name": "@aadi20/mockforge",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Instant, zero-setup OpenAPI 3.0/3.1 mock server CLI",
   "type": "module",
   "bin": {
