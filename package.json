@@ -1,0 +1,50 @@
+{
+  "name": "mockforge",
+  "version": "1.0.0",
+  "description": "Instant, zero-setup OpenAPI 3.0/3.1 mock server CLI",
+  "type": "module",
+  "bin": {
+    "mockforge": "./dist/bin/index.js"
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm test",
+    "start": "tsx bin/index.ts"
+  },
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^11.9.0",
+    "@faker-js/faker": "^9.5.0",
+    "@hono/node-server": "^1.13.8",
+    "chokidar": "^4.0.3",
+    "commander": "^13.1.0",
+    "hono": "^4.7.0",
+    "picocolors": "^1.1.1",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.6"
+  },
+  "keywords": [
+    "openapi",
+    "swagger",
+    "mock",
+    "api",
+    "mock-server",
+    "faker",
+    "chaos-engineering",
+    "testing"
+  ],
+  "author": "",
+  "license": "MIT"
+}
